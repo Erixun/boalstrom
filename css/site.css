@@ -25,6 +25,7 @@ app {
     margin: auto;
 }
 
+/* Header */
 .top-row {
     height: 3.5rem;
     display: flex;
@@ -67,6 +68,8 @@ app {
             color: white;
         }
 
+
+/* Main content */
 .main {
     flex: 1;
     width: 70vw;
@@ -75,10 +78,41 @@ app {
     margin: auto;
 }
     .main h2 {
-        font-size: calc(1rem + .5vw);
+        font-size: calc(1rem + .7vw);
     }
-    .main p {
-        font-size: calc(.8rem + 5%);
+
+
+/* Exhibitions */
+.upcoming, .previous {
+    margin: 2rem 0 4rem;
+}
+.exhibitions * {
+    text-align: center;
+}
+.upcoming .exh:last-child {
+    margin-top: 50px;
+}
+
+header * {
+    margin: 0;
+    text-align: center;
+}
+
+.exh-list, .year-list {
+    list-style: none;
+    padding: 0;
+}
+.year-list {
+    margin-top: 2rem;
+}
+.year-article {
+    margin-bottom: 2rem
+}
+
+    .exh {
+        margin: 1.5rem 0;
+        font-size: larger;
+        font-style: italic;
     }
 
     /* .main .top-row {
