@@ -114,6 +114,9 @@ article {
 .centered {
     text-align: center;
 }
+.nav-item.attractive {
+    background-color: rgba(106, 3, 3, 0.51);
+}
 
 /* Exhibitions */
 .upcoming, .previous {
