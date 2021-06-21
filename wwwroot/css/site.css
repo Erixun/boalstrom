@@ -72,6 +72,9 @@ app {
             text-decoration: underline;
             color: white;
         }
+        .nav-link.active {
+            text-decoration: overline;
+        }
 
 
 /* Main content */
