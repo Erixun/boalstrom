@@ -1,7 +1,9 @@
 ﻿<div class="top-row pl-4 navbar navbar-dark">
-
-    @* <div class="@NavMenuCssClass" @onclick="ToggleNavMenu"> *@
-    <ul class="nav flex-row">
+    <div class="menu-wrapper" @onclick="ToggleNavMenu">
+        <span class="nav-item oi oi-menu"></span>
+    </div>
+    
+    <ul id="nav-list" class="@NavMenuCssClass nav flex-row">
         <li class="nav-item">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 @* <span class="oi oi-home"></span> *@
@@ -49,16 +51,17 @@
             </NavLink>
         </li>
     </ul>
-    @* </div> *@
 </div>
 
 @code {
-    private bool collapseNavMenu = false;
+    private bool? collapseNavMenu;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => 
+        collapseNavMenu == null? null : 
+        collapseNavMenu == true? "collapse" : "show";
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        collapseNavMenu = collapseNavMenu == false? !collapseNavMenu : false;
     }
 }
