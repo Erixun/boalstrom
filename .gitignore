@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Local css file to be regenerated on build
+*.css
+
 # User-specific files
 *.rsuser
 *.suo
