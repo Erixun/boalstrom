@@ -43,7 +43,7 @@ app {
     align-items: center;
 }
 .top-banner {
-    height: 45vh;//350px;
+    height: 45vh;
     max-height: 60vw;
     width: 100%;
     display: flex;
@@ -56,7 +56,7 @@ app {
 
 }
     .top-banner .navbar {
-        background-color: rgba(99, 34, 37, 1);//rgba(94, 31, 31, 0.75);
+        background-color: rgba(99, 34, 37, .9);
         height: max-content;
         /* align-self: flex-end; */
         justify-content: center;
@@ -165,7 +165,7 @@ header * {
         font-style: italic;
     }
 
-$img-shadow: 1px 1px 1px 1px;
+$img-shadow: 1px 1px 1px 1px black;
 /* Pictures */
 .content #featured figure {
     width: min-content;
@@ -188,11 +188,14 @@ $img-shadow: 1px 1px 1px 1px;
     max-width: 250px;
     box-shadow: $img-shadow;
 }
+.img-grid > a {
+    margin: auto;
+}
 .img-grid {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
     justify-content: space-around;
-    grid-gap: 20px;
+    grid-gap: 40px 16px;
     margin-top: 5vh;    
 }
 
