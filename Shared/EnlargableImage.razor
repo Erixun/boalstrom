@@ -1,0 +1,14 @@
+<a href="@BigRef" target="_blank" rel="noopener noreferrer">
+  <img src="@SmallRef" alt="">
+</a>
+
+@code {
+  const string root = "images/pictures/";
+  
+  [Parameter]
+  public string ImgName { get; set; }
+
+  private string BigRef => $"{root}big/{ImgName}.jpg";
+
+  private string SmallRef => $"{root}small/{ImgName}_small.jpg";
+}
