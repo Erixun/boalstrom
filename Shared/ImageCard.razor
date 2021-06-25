@@ -1,0 +1,38 @@
+@inject IJSRuntime JsRuntime
+<figure>
+  <EnlargableImage Dir="pictures" Name="@Img" />
+  <figcaption>
+    Byzantions ljus. Giclétryck, 60X80cm,
+    25st numrerade och signerade blad <br>
+    3 200:- /blad
+  </figcaption>
+  <button @onclick="SendLocalEmail">Beställ</button>
+</figure>
+
+@code {
+
+  const string Recipient = "erik.sund.berg20@hotmail.se";
+
+  [Parameter]
+  public string Title { get; set; }
+  [Parameter]
+  public string Img { get; set; }
+
+  [Parameter]
+  public string Caption { get; set; }
+
+  private string WriteSubject => 
+    $"Beställning av {Caption}";
+  private string WriteBody => 
+    $"Hej Bo,\n\nJag önskar beställa x exemplar av {Caption}\n\n";
+
+  protected void SendLocalEmail()//string toEmailAddress = Recipient)//, string subject = WriteSubject, string body)
+  {
+    var toEmailAddress = Recipient;
+    var subject = WriteSubject;
+    var body = WriteBody;
+    JsRuntime.InvokeAsync<object>("blazorExtensions.SendLocalEmail",
+    new object[] { toEmailAddress, subject, body });
+  }
+
+}
