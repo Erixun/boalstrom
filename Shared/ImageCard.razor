@@ -17,14 +17,17 @@
   public string Title { get; set; }
   [Parameter]
   public string Img { get; set; }
-
   [Parameter]
   public string Caption { get; set; }
 
   private string WriteSubject => 
     $"Beställning: {Caption}";
   private string WriteBody => 
-    $"Hej Bo,\n\nJag önskar beställa x exemplar av {Caption}\n\n";
+$@"Hej Bo,
+
+Jag önskar beställa x exemplar av {Caption}
+
+";
 
   protected void SendLocalEmail()
   {

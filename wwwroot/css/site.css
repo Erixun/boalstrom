@@ -81,6 +81,7 @@ app {
   margin: 6px 0;
   visibility: hidden;
   background: #401514a8;
+  border: 3px;
 }
 
 .menu-wrapper:hover {
