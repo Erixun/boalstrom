@@ -77,8 +77,11 @@ app {
 
 .menu-wrapper {
   align-self: start;
-  padding: 9px;
+  padding: 3px 7px;
+  margin: 6px 0;
   visibility: hidden;
+  background: #401514a8;
+  border: 3px;
 }
 
 .menu-wrapper:hover {
@@ -196,11 +199,11 @@ header * {
   box-shadow: 1px 1px 1px 1px black;
 }
 
-#featured figcaption {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin: 5px 0 10px;
-}
+  #featured figcaption {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 5px 0 10px;
+  }
 
 .content #other img {
   margin: auto;
@@ -208,9 +211,6 @@ header * {
   box-shadow: 1px 1px 1px 1px black;
 }
 
-.img-grid>a {
-  margin: auto;
-}
 
 .img-grid {
   display: grid;
@@ -220,30 +220,35 @@ header * {
   margin-top: 5vh;
 }
 
+  .img-grid>a {
+    margin: auto;
+  }
+
+  
 section#book {
   width: 60%;
   margin: auto;
 }
 
-p#book-info {
-  font-size: 0.85rem;
-  text-align: center;
-  margin: 2rem 0;
-}
+  p#book-info {
+    font-size: 0.85rem;
+    text-align: center;
+    margin: 2rem 0;
+  }
 
-p#book-info span {
-  font-style: italic;
-}
+  p#book-info span {
+    font-style: italic;
+  }
 
 section#vendela {
   margin-top: 100px;
   text-align: center;
 }
 
-section#vendela img {
-  width: 60vw;
-  max-width: 700px;
-}
+  section#vendela img {
+    width: 60vw;
+    max-width: 700px;
+  }
 
 .valid.modified:not([type=checkbox]) {
   outline: 1px solid #26b050;
@@ -304,19 +309,19 @@ section#vendela img {
   background-color: white;
 }
 
-.footer hr {
-  height: 1px;
-  margin: 3px 0;
-  background-color: #808000;
-}
+  .footer hr {
+    height: 1px;
+    margin: 3px 0;
+    background-color: #808000;
+  }
 
-.footer address {
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+  .footer address {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-.footer span {
-  padding: 0 7px;
-}
+  .footer span {
+    padding: 0 7px;
+  }
