@@ -23,11 +23,7 @@
   private string WriteSubject =>  $"Beställning: {Caption}";
   
   private string WriteBody => 
-$@"Hej Bo,
-
-Jag önskar beställa x exemplar av {Caption}
-
-";
+    $"Hej Bo, jag önskar beställa x exemplar av {Caption}";
 
   protected void SendLocalEmail()
   {
