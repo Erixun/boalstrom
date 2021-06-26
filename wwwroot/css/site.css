@@ -23,8 +23,12 @@ a.nav-link.active {
 
 .btn-primary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #612629;
+  border-color: #572225;
+}
+.btn-primary:hover {
+  background-color: #681414;
+  border-color: #000;
 }
 
 app {
@@ -177,6 +181,10 @@ header * {
   width: min-content;
   margin: auto;
   text-align: center;
+  padding: 17px;
+  background-color: beige;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
 }
 
 .content #featured img {
@@ -188,7 +196,7 @@ header * {
 #featured figcaption {
   font-weight: bold;
   font-size: 0.9rem;
-  margin-top: 5px;
+  margin: 5px 0 10px;
 }
 
 .content #other img {

@@ -6,7 +6,7 @@
     25st numrerade och signerade blad <br>
     3 200:- /blad
   </figcaption>
-  <button @onclick="SendLocalEmail">Beställ</button>
+  <button class="btn btn-primary" @onclick="SendLocalEmail">Beställ</button>
 </figure>
 
 @code {
@@ -22,11 +22,11 @@
   public string Caption { get; set; }
 
   private string WriteSubject => 
-    $"Beställning av {Caption}";
+    $"Beställning: {Caption}";
   private string WriteBody => 
     $"Hej Bo,\n\nJag önskar beställa x exemplar av {Caption}\n\n";
 
-  protected void SendLocalEmail()//string toEmailAddress = Recipient)//, string subject = WriteSubject, string body)
+  protected void SendLocalEmail()
   {
     var toEmailAddress = Recipient;
     var subject = WriteSubject;
