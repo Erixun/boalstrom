@@ -1,15 +1,15 @@
 {
   "name": "Bo Alströms App",
-  "short_name": "BoApp",
+  "short_name": "Bo Alstrom",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "BoIcon.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "200x200"
     }
   ]
 }
