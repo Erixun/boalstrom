@@ -13,13 +13,13 @@ a.nav-link {
 }
 
 a.nav-link:hover {
-  background-color: rgba(106, 3, 3, 0.51);
+  background-color: rgba(106, 3, 3, 0.50);
   color: white;
   cursor: pointer;
 }
 
 a.nav-link.active {
-  background-color: rgba(106, 3, 3, 0.95);
+  background-color: rgba(106, 3, 3, 0.80);
 }
 
 .btn {
