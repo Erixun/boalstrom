@@ -2,9 +2,7 @@
 <figure>
   <EnlargableImage Dir="pictures" Name="@Img" />
   <figcaption>
-    Byzantions ljus. Giclétryck, 60X80cm,
-    25st numrerade och signerade blad <br>
-    3 200:- /blad
+    @Title<br>@Caption<br>
   </figcaption>
   <button class="btn btn-primary" @onclick="SendLocalEmail">Beställ</button>
 </figure>
@@ -20,10 +18,10 @@
   [Parameter]
   public string Caption { get; set; }
 
-  private string WriteSubject =>  $"Beställning: {Caption}";
-  
+  private string WriteSubject =>  $"Beställning: {Title}";
+
   private string WriteBody => 
-    $"Hej Bo, jag önskar beställa x exemplar av {Caption}";
+    $"Hej Bo,\r\rJag önskar beställa x exemplar av {Caption}\r";
 
   protected void SendLocalEmail()
   {
