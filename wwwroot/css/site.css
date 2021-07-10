@@ -221,10 +221,17 @@ figure>img {
   text-align: center;
 }
 
-.upcoming, .previous {
-  margin: 2rem 0 4rem;
+#permanent {
+  margin: 0;
+  margin-bottom: 4rem;
+}
+#permanent .exh {
+  margin: 0;
 }
 
+.exhibitions {
+  margin: 3rem 0 6rem;
+}
 .exhibitions * {
   text-align: center;
 }
@@ -241,6 +248,7 @@ header * {
 .exh-list, .year-list {
   list-style: none;
   padding: 0;
+  margin-bottom: 60px;
 }
 
 .year-list {
