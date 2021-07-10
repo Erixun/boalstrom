@@ -2,7 +2,10 @@
 <figure>
   <EnlargableImage Dir="pictures" Name="@Img" />
   <figcaption>
-    @Title<br>@Caption<br>
+    <span class="title">
+    @Title
+    </span>
+    <br>@Caption<br>
   </figcaption>
   <button class="btn btn-primary" @onclick="SendLocalEmail">Beställ</button>
 </figure>
