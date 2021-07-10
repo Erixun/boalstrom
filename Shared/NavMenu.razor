@@ -12,7 +12,7 @@
         </li>
         <li class="nav-item attractive">
             <NavLink class="nav-link" href="buy">
-                Att Köpa
+                Verk till salu
             </NavLink>
         </li>
         <li class="nav-item">
@@ -36,7 +36,8 @@
             </NavLink>
             </li> *@
         <li id="nav-item-extra" class="nav-item">
-            <span id="nav-ellipses" class="@Active nav-link" @onclick="ToggleExtra">. . .</span>
+            <span id="nav-ellipses" class="@Active nav-link" @onclick="ToggleExtra" @onkeydown="Enter" tabindex="0"
+                @onfocusout="OutFocus">. . .</span>
             <ul id="nav-list-extra" class="@Extra" @onclick="ToggleExtra">
                 <li class="nav-item">
                     <NavLink class="nav-link" href="artist">
@@ -74,5 +75,19 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = collapseNavMenu == false ? !collapseNavMenu : false;
+    }
+
+    public void Enter(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            ToggleExtra();
+        }
+    }
+
+    private async Task OutFocus()
+    {
+        await Task.Delay(100);
+        this.collapseExtra = true;
     }
 }
