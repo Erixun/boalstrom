@@ -62,19 +62,26 @@ app {
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
+
 #dot1 {
   animation-delay: 0;
 }
+
 #dot2 {
   animation-delay: .2s;
 }
+
 #dot3 {
   animation-delay: .4s;
 }
 
 @keyframes dotdotdot {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .header.top-bar {
@@ -252,7 +259,6 @@ header * {
 
 .content #featured figure {
   width: min-content;
-  margin: auto;
   text-align: center;
   padding: 17px;
   background-color: beige;
@@ -283,11 +289,12 @@ figcaption span.title {
 }
 
 .img-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-content: space-around;
-  grid-gap: 40px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  grid-gap: 50px;
   margin-top: 5vh;
+  align-items: center;
 }
 
 .img-grid>a {
