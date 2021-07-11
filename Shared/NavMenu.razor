@@ -40,17 +40,17 @@
                 @onfocusout="OutFocus">. . .</span>
             <ul id="nav-list-extra" class="@Extra" @onclick="ToggleExtra">
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="artist">
+                    <NavLink @onfocus="QuickFocus" class="nav-link" href="artist">
                         Konstnären själv
                     </NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="pictures">
+                    <NavLink @onfocus="QuickFocus" class="nav-link" href="pictures">
                         Bilder
                     </NavLink>
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link" href="other">
+                    <NavLink @onfocus="QuickFocus" @onfocusout="OutFocus" class="nav-link" href="other">
                         Övrigt
                     </NavLink>
                 </li>
@@ -62,16 +62,17 @@
 @code {
     private bool? collapseNavMenu;
     private bool collapseExtra = true;
+    private bool focusExtra = false;
+
     private string NavMenuCssClass =>
-    collapseNavMenu == null ? null :
-    collapseNavMenu == true ? "collapse" : "show";
+        collapseNavMenu == null ? null :
+        collapseNavMenu == true ? "collapse" : "show";
 
     private string Extra => collapseExtra ? "collapse" : "show";
     private string Active => collapseExtra ? "" : "active";
-    private void ToggleExtra()
-    {
-        collapseExtra = !collapseExtra;
-    }
+
+    private void ToggleExtra() => collapseExtra = !collapseExtra;
+
     private void ToggleNavMenu()
     {
         collapseNavMenu = collapseNavMenu == false ? !collapseNavMenu : false;
@@ -85,9 +86,17 @@
         }
     }
 
+    private async void QuickFocus() {
+        focusExtra = true;
+        await Task.Delay(150);
+        focusExtra = false;
+    }
+
     private async Task OutFocus()
     {
-        await Task.Delay(100);
-        this.collapseExtra = true;
+        await Task.Delay(150);
+        if(!focusExtra) {
+            collapseExtra = true;
+        }
     }
 }

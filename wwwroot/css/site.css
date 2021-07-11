@@ -118,26 +118,22 @@ app {
   position: fixed;
 }
 
-/* .menu-wrapper {
-  align-self: start;
-  padding: 3px 7px;
-  margin: 6px 0;
-  visibility: hidden;
-  background: #401514a8;
-  border: 3px;
-}
-
-.menu-wrapper:hover {
-  cursor: pointer;
-} */
-
 #nav-list {
-  min-width: 365px;
+  min-width: 360px;
   width: 85vw;
   max-width: 1100px;
   max-height: 35.5px;
   display: flex;
   flex-wrap: nowrap;
+}
+
+.nav-link {
+  padding: .5rem .8rem;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid black;
+  border-radius: 2px;
 }
 
 .nav-link, .nav-item {
@@ -166,7 +162,7 @@ app {
   padding: 5px 10px;
   width: max-content;
   margin-top: -1px;
-  border: 1px solid #68090a;
+  border: 1px solid #868383;
 }
 
 #nav-list-extra>li {
@@ -225,6 +221,7 @@ figure>img {
   margin: 0;
   margin-bottom: 4rem;
 }
+
 #permanent .exh {
   margin: 0;
 }
@@ -232,6 +229,7 @@ figure>img {
 .exhibitions {
   margin: 3rem 0 6rem;
 }
+
 .exhibitions * {
   text-align: center;
 }
@@ -384,7 +382,7 @@ section#vendela img {
     justify-content: start;
   }
   #nav-list {
-    width: 100vw;
+    width: 100%;
   }
   #nav-list-extra {
     align-self: flex-end;
