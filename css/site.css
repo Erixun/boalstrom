@@ -131,9 +131,13 @@ app {
   padding: .5rem .8rem;
 }
 
-.nav-link:focus-visible {
+
+
+.nav-link:focus-visible, .nav-link:focus {
   outline: 2px solid black;
   border-radius: 2px;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .nav-link, .nav-item {
