@@ -135,15 +135,12 @@ app {
 
 .nav-link:focus {
   outline: none;
-  box-shadow: inset 6px 0 0 0 white;
-  border-color: transparent;
-}
-/* .nav-link:focus-visible, .nav-link:focus {
-  outline: 2px solid black;
-  border-radius: 2px;
   box-shadow: none;
   border-color: transparent;
-} */
+}
+.nav-link:focus-visible {
+  box-shadow: inset 6px 0 0 0 white;
+}
 
 .nav-link, .nav-item {
   color: white;
@@ -164,11 +161,6 @@ app {
   line-height: 12px;
   user-select: none;
 }
-/* #nav-ellipses:focus {
-  outline: none;
-  box-shadow: none;
-  border-color: transparent;
-} */
 
 #nav-list-extra {
   list-style: none;
