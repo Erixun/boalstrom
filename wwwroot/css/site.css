@@ -297,13 +297,12 @@ header * {
 }
 
 #featured figcaption {
-  font-weight: bold;
   font-size: 0.9rem;
   margin: 5px 0 10px;
 }
 
 figcaption span.title {
-  font-style: italic;
+  font-weight: bold;
 }
 
 .content #other img {
