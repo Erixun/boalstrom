@@ -1,6 +1,6 @@
 window.blazorExtensions = {
   SendLocalEmail: function (mailto, subject, body) {
-    var link = document.createElement('a');
+    var link = document.createElement('a', {target:"_blank"});
     var uri = "mailto:" + mailto + "?";
     if (!isEmpty(subject)) {
         uri = uri + "subject=" + subject;

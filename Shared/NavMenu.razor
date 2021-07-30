@@ -1,18 +1,18 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <div class="menu-wrapper" @onclick="ToggleNavMenu">
+﻿<div class="top-row navbar navbar-dark">
+    @* <div class="menu-wrapper" @onclick="ToggleNavMenu">
         <span class="nav-item oi oi-menu"></span>
-    </div>
-    
+        </div> *@
+
     <ul id="nav-list" class="@NavMenuCssClass nav flex-row">
         <li class="nav-item">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 @* <span class="oi oi-home"></span> *@
-                Hem
+                Välkommen
             </NavLink>
         </li>
         <li class="nav-item">
             <NavLink class="nav-link" href="buy">
-                Att Köpa
+                Verk till salu
             </NavLink>
         </li>
         <li class="nav-item">
@@ -20,48 +20,83 @@
                 Utställningar
             </NavLink>
         </li>
-        <li class="nav-item">
-            <NavLink class="nav-link" href="artist">
-                Konstnären Själv
-            </NavLink>
-        </li>
         @* <li class="nav-item">
             <NavLink class="nav-link" href="counter">
-                Offentliga Arbeten
+            Offentliga Arbeten
             </NavLink>
-        </li>
-        <li class="nav-item">
+            </li>
+            <li class="nav-item">
             <NavLink class="nav-link" href="counter">
-                Teckningar
+            Teckningar
             </NavLink>
-        </li>
-        <li class="nav-item">
+            </li>
+            <li class="nav-item">
             <NavLink class="nav-link" href="counter">
-                Projekt
+            Projekt
             </NavLink>
-        </li> *@
-        <li class="nav-item">
-            <NavLink class="nav-link" href="pictures">
-                Bilder
-            </NavLink>
-        </li>
-        <li class="nav-item">
-            <NavLink class="nav-link" href="other">
-                Övrigt
-            </NavLink>
+            </li> *@
+        <li id="nav-item-extra" class="nav-item">
+            <span id="nav-ellipses" class="@Active nav-link" @onclick="ToggleExtra" @onkeydown="Enter" tabindex="0"
+                @onfocusout="OutFocus">. . .</span>
+            <ul id="nav-list-extra" class="@Extra" @onclick="ToggleExtra">
+                <li class="nav-item">
+                    <NavLink @onfocus="QuickFocus" class="nav-link" href="artist">
+                        Konstnären själv
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink @onfocus="QuickFocus" class="nav-link" href="pictures">
+                        Bilder
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink @onfocus="QuickFocus" @onfocusout="OutFocus" class="nav-link" href="other">
+                        Övrigt
+                    </NavLink>
+                </li>
+            </ul>
         </li>
     </ul>
 </div>
 
 @code {
     private bool? collapseNavMenu;
+    private bool collapseExtra = true;
+    private bool focusExtra = false;
 
-    private string NavMenuCssClass => 
-        collapseNavMenu == null? null : 
-        collapseNavMenu == true? "collapse" : "show";
+    private string NavMenuCssClass =>
+        collapseNavMenu == null ? null :
+        collapseNavMenu == true ? "collapse" : "show";
+
+    private string Extra => collapseExtra ? "collapse" : "show";
+    private string Active => collapseExtra ? "" : "active";
+
+    private void ToggleExtra() => collapseExtra = !collapseExtra;
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = collapseNavMenu == false? !collapseNavMenu : false;
+        collapseNavMenu = collapseNavMenu == false ? !collapseNavMenu : false;
+    }
+
+    public void Enter(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            ToggleExtra();
+        }
+    }
+
+    private async void QuickFocus() {
+        focusExtra = true;
+        await Task.Delay(150);
+        focusExtra = false;
+    }
+
+    private async Task OutFocus()
+    {
+        await Task.Delay(150);
+        if(!focusExtra) {
+            collapseExtra = true;
+        }
     }
 }

@@ -2,16 +2,17 @@
 <figure>
   <EnlargableImage Dir="pictures" Name="@Img" />
   <figcaption>
-    Byzantions ljus. Giclétryck, 60X80cm,
-    25st numrerade och signerade blad <br>
-    3 200:- /blad
+    <span class="title">
+    @Title
+    </span>
+    <br>@Caption<br>
   </figcaption>
   <button class="btn btn-primary" @onclick="SendLocalEmail">Beställ</button>
 </figure>
 
 @code {
 
-  const string Recipient = "erik.sund.berg20@hotmail.se";
+  const string Recipient = "bogustafalstrom@gmail.com";
 
   [Parameter]
   public string Title { get; set; }
@@ -20,14 +21,10 @@
   [Parameter]
   public string Caption { get; set; }
 
-  private string WriteSubject =>  $"Beställning: {Caption}";
-  
+  private string WriteSubject =>  $"Beställning: {Title}";
+
   private string WriteBody => 
-$@"Hej Bo,
-
-Jag önskar beställa x exemplar av {Caption}
-
-";
+    $"Hej Bo,\r\rJag önskar beställa x exemplar av {Title}. {Caption}.\r";
 
   protected void SendLocalEmail()
   {
