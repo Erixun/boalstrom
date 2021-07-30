@@ -133,9 +133,9 @@ app {
   padding: .5rem .8rem;
 }
 
-*:focus {
+.nav-link:focus {
   outline: none;
-  box-shadow: none;
+  box-shadow: inset 6px 0 0 0 white;
   border-color: transparent;
 }
 /* .nav-link:focus-visible, .nav-link:focus {
@@ -164,11 +164,11 @@ app {
   line-height: 12px;
   user-select: none;
 }
-#nav-ellipses:focus {
+/* #nav-ellipses:focus {
   outline: none;
   box-shadow: none;
   border-color: transparent;
-}
+} */
 
 #nav-list-extra {
   list-style: none;
